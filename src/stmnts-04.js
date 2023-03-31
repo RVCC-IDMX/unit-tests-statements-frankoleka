@@ -13,6 +13,9 @@
  */
 function fahrenheitToCelsius(fahrenheit) {
   // write your code here & return
+  // eslint-disable-next-line no-mixed-operators
+  const celsius = (fahrenheit - 32) * 5 / 9;
+  return Math.round(celsius * 100) / 100;
 }
 
 /**
@@ -22,6 +25,9 @@ function fahrenheitToCelsius(fahrenheit) {
  */
 function celsiusToFahrenheit(celsius) {
   // write your code here & return
+  // eslint-disable-next-line no-mixed-operators
+  const fahrenheit = celsius * 9 / 5 + 32;
+  return Math.round(fahrenheit * 100) / 100;
 }
 
 module.exports = {

@@ -1,3 +1,5 @@
+/* eslint-disable no-tabs */
+/* eslint-disable no-plusplus */
 /*
  * stmnts-07.js
  * Language: javascript
@@ -14,6 +16,7 @@
  */
 function logicalAnd(a, b) {
   // write your code here & return
+  return Boolean(a && b);
 }
 
 /**
@@ -24,6 +27,7 @@ function logicalAnd(a, b) {
  */
 function logicalOr(a, b) {
   // write your code here & return
+  return Boolean(a || b);
 }
 
 /**
@@ -33,6 +37,7 @@ function logicalOr(a, b) {
  */
 function invertBoolean(bool) {
   // write your code here & return
+  return !bool;
 }
 
 /**
@@ -50,6 +55,11 @@ function invertBoolean(bool) {
  */
 function numberOfOdds(num) {
   // write your code here & return
+  let count = 0;
+  for (let i = 1; i < num; i += 2) {
+    count += 1;
+  }
+  return count;
 }
 
 /**
@@ -63,6 +73,11 @@ function numberOfOdds(num) {
  */
 function addUpTheNumbers(num) {
   // write your code here & return
+  let sum = 0;
+  for (let i = 0; i <= num; i++) {
+    sum += i;
+  }
+  return sum;
 }
 
 /**
@@ -72,6 +87,7 @@ function addUpTheNumbers(num) {
  * ? score is a positive integer 0 through 100
  * ? generate a letter grade based on the following
  * ? table
+ // eslint-disable-next-line no-tabs
  * ? < 60	F
  * ? < 70	D
  * ? < 80	C
@@ -82,6 +98,16 @@ function addUpTheNumbers(num) {
  */
 function gradeGenerator(score) {
   // write your code here & return
+  if (score < 60) {
+    return 'F';
+  } if (score < 70) {
+    return 'D';
+  } if (score < 80) {
+    return 'C';
+  } if (score < 90) {
+    return 'B';
+  }
+  return 'A';
 }
 
 /**
@@ -97,11 +123,14 @@ function gradeGenerator(score) {
  * ? return a string written like:
  * ? Francine got an A
  * ? David got a B
- * ? note: you have to use English grammar's correct indefinite article 
+ * ? note: you have to use English grammar's correct indefinite article
  * ? it's 'an A' (not a A) and 'an F' (not a F)
  */
 function getGrade(name, score) {
   // write your code here & return
+  const grade = gradeGenerator(score);
+  const article = 'AF'.includes(grade.charAt(0)) ? 'an' : 'a';
+  return `${name} got ${article} ${grade}`;
 }
 
 module.exports = {
